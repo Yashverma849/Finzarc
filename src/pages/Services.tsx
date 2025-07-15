@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, Zap, Brain, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/Navbar";
+import { NavbarContextual } from "@/components/NavbarContextual";
 import { ServiceCard } from "@/components/ServiceCard";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 import webDevelopmentImg from "@/assets/web-development.jpg";
@@ -77,7 +77,7 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative bg-primary text-white pt-24 pb-16">
-        <Navbar />
+        <NavbarContextual variant="dark" />
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">

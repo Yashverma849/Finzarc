@@ -10,12 +10,12 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 px-8 py-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/20 px-8 py-4 transition-all duration-300">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <Zap className="h-6 w-6 text-white" />
-          <span className="font-manrope text-sm text-white/80 uppercase tracking-widest font-medium">
+          <span className="font-manrope text-sm text-white/90 uppercase tracking-widest font-medium">
             FINZARC
           </span>
         </Link>

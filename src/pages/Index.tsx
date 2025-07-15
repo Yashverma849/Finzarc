@@ -75,7 +75,7 @@ const Index = () => {
         <Navbar />
 
         {/* Hero Content - Left Side */}
-        <div className="relative z-10 max-w-2xl pt-32 px-8">
+        <div className="relative z-10 max-w-2xl pt-40 px-8">
           <div className="space-y-6">
             <h1 className="font-futura text-6xl text-white tracking-tight leading-[1.1] uppercase">
               FINZARC
