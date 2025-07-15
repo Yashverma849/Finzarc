@@ -81,7 +81,7 @@ const Index = () => {
               FINZARC
             </h1>
             
-            <p className="font-manrope text-base text-white/80 font-normal max-w-lg">
+            <p className="font-manrope text-base text-white/90 font-normal max-w-lg">
               Marketing Automation · WebApp Dev · Data Science & Analytics
             </p>
             
@@ -93,20 +93,20 @@ const Index = () => {
 
         {/* Right Side Vertical Text */}
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90">
-          <p className="font-manrope uppercase tracking-widest text-sm text-white/60 whitespace-nowrap">
+          <p className="font-manrope uppercase tracking-widest text-sm text-white/80 whitespace-nowrap">
             USD 16M in Incremental Revenue for Clients · Avg Delivery Time &lt; 3 Weeks
           </p>
         </div>
 
         {/* Bottom Footer Labels */}
         <div className="absolute bottom-4 left-6">
-          <p className="font-manrope text-xs text-white/50">
+          <p className="font-manrope text-xs text-white/75">
             ✦ Founded to Upgrade Businesses, 2023
           </p>
         </div>
 
         <div className="absolute bottom-4 right-6">
-          <p className="font-manrope text-xs text-white/60">
+          <p className="font-manrope text-xs text-white/80">
             ©️ FINZARC
           </p>
         </div>
@@ -144,7 +144,7 @@ const Index = () => {
                 <TrendingUp className="w-8 h-8 text-teal" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">$16M+</h3>
-              <p className="font-manrope text-white/80">Incremental Revenue Generated</p>
+              <p className="font-manrope text-white/90">Incremental Revenue Generated</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -152,7 +152,7 @@ const Index = () => {
                 <Zap className="w-8 h-8 text-neon-pink" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">&lt; 3 Weeks</h3>
-              <p className="font-manrope text-white/80">Average Delivery Time</p>
+              <p className="font-manrope text-white/90">Average Delivery Time</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -160,7 +160,7 @@ const Index = () => {
                 <Sparkles className="w-8 h-8 text-accent-gold" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">100+</h3>
-              <p className="font-manrope text-white/80">Successful Projects</p>
+              <p className="font-manrope text-white/90">Successful Projects</p>
             </div>
           </div>
         </div>
