@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				futura: ['Futura Condensed Extra Bold', 'Arial Black', 'Helvetica Bold', 'sans-serif'],
+				manrope: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -41,8 +45,16 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					gold: 'hsl(var(--accent-gold))',
+					'gold-foreground': 'hsl(var(--accent-gold-foreground))',
+				},
+				teal: {
+					DEFAULT: 'hsl(var(--teal))',
+					foreground: 'hsl(var(--teal-foreground))'
+				},
+				neon: {
+					pink: 'hsl(var(--neon-pink))',
+					purple: 'hsl(var(--neon-purple))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -51,17 +63,20 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-neon': 'var(--gradient-neon)',
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-luxury': 'var(--gradient-luxury)',
+			},
+			boxShadow: {
+				'luxury': 'var(--shadow-luxury)',
+				'gold': 'var(--shadow-gold)',
+				'neon': 'var(--shadow-neon)',
+			},
+			transitionTimingFunction: {
+				'luxury': 'cubic-bezier(0.4, 0, 0.2, 1)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
