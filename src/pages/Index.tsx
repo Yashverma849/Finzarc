@@ -68,7 +68,6 @@ const Index = () => {
               type="video/mp4" 
             />
           </video>
-          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Navigation */}
@@ -77,15 +76,15 @@ const Index = () => {
         {/* Hero Content - Left Side */}
         <div className="relative z-10 max-w-2xl pt-40 px-8">
           <div className="space-y-6">
-            <h1 className="font-futura text-6xl text-white tracking-tight leading-[1.1] uppercase">
+            <h1 className="font-futura text-6xl bg-gradient-neon bg-clip-text text-transparent tracking-tight leading-[1.1] uppercase">
               FINZARC
             </h1>
             
-            <p className="font-manrope text-base text-white/90 font-normal max-w-lg">
+            <p className="font-manrope text-base text-teal font-normal max-w-lg">
               Marketing Automation · WebApp Dev · Data Science & Analytics
             </p>
             
-            <Button className="bg-white text-black px-5 py-2 rounded-lg font-manrope text-sm font-medium uppercase hover:bg-gray-100 transition-colors duration-300">
+            <Button className="bg-gradient-teal text-white px-5 py-2 rounded-lg font-manrope text-sm font-medium uppercase hover:bg-teal transition-colors duration-300">
               3x My Revenue →
             </Button>
           </div>
@@ -93,20 +92,20 @@ const Index = () => {
 
         {/* Right Side Vertical Text */}
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90">
-          <p className="font-manrope uppercase tracking-widest text-sm text-white/80 whitespace-nowrap">
+          <p className="font-manrope uppercase tracking-widest text-sm text-neon-pink whitespace-nowrap">
             USD 16M in Incremental Revenue for Clients · Avg Delivery Time &lt; 3 Weeks
           </p>
         </div>
 
         {/* Bottom Footer Labels */}
         <div className="absolute bottom-4 left-6">
-          <p className="font-manrope text-xs text-white/75">
+          <p className="font-manrope text-xs text-teal">
             ✦ Founded to Upgrade Businesses, 2023
           </p>
         </div>
 
         <div className="absolute bottom-4 right-6">
-          <p className="font-manrope text-xs text-white/80">
+          <p className="font-manrope text-xs text-neon-pink">
             ©️ FINZARC
           </p>
         </div>
