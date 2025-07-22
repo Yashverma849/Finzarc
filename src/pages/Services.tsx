@@ -75,14 +75,14 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-primary text-white pt-24 pb-16">
+      <section className="relative bg-skin-beige dark:bg-gray-900 text-gray-800 dark:text-white pt-24 pb-16">
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">
             <h1 className="font-futura text-5xl md:text-6xl uppercase tracking-tight mb-6">
               Our Services
             </h1>
-            <p className="font-manrope text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="font-manrope text-xl text-gray-600 dark:text-white/80 max-w-3xl mx-auto">
               Premium solutions designed to accelerate your business growth and digital transformation
             </p>
           </div>
@@ -90,7 +90,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 px-8 bg-gradient-luxury">
+      <section className="py-24 px-8 bg-off-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -134,7 +134,7 @@ const Services = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-8 bg-muted">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>

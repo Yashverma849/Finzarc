@@ -34,14 +34,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-primary text-white pt-24 pb-16">
+      <section className="relative bg-skin-beige dark:bg-gray-900 text-gray-800 dark:text-white pt-24 pb-16">
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">
             <h1 className="font-futura text-5xl md:text-6xl uppercase tracking-tight mb-6">
               Get In Touch
             </h1>
-            <p className="font-manrope text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="font-manrope text-xl text-gray-600 dark:text-white/80 max-w-3xl mx-auto">
               Ready to transform your business? Let's discuss your project and explore how we can help you achieve exceptional results
             </p>
           </div>
@@ -49,7 +49,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 px-8 bg-gradient-luxury">
+      <section className="py-16 px-8 bg-off-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -73,7 +73,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-24 px-8 bg-background">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
@@ -222,7 +222,7 @@ const Contact = () => {
               </div>
 
               {/* Quote Box */}
-              <div className="mt-12 p-6 bg-gradient-luxury rounded-xl border border-border">
+              <div className="mt-12 p-6 bg-off-white dark:bg-gray-800 rounded-xl border border-border">
                 <blockquote className="font-manrope text-foreground italic mb-4">
                   "Finzarc transformed our business operations and helped us achieve a 300% increase in efficiency. Their expertise in AI automation is unmatched."
                 </blockquote>
@@ -236,7 +236,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-8 bg-muted">
+      <section className="py-16 px-8 bg-off-white dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-manrope text-3xl font-bold text-foreground mb-4">
             Prefer a Direct Conversation?

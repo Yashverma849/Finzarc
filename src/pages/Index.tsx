@@ -4,6 +4,9 @@ import { ServiceCard } from "@/components/ServiceCard";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 import webDevelopmentImg from "@/assets/web-development.jpg";
 import dataAnalyticsImg from "@/assets/data-analytics.jpg";
+import { MarketLeadersSection } from "@/components/MarketLeadersSection";
+import { MeetCoFoundersSection } from "@/components/MeetCoFoundersSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const services = [
@@ -111,7 +114,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-8 bg-gradient-luxury">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-manrope text-4xl font-bold text-foreground mb-4">
@@ -133,29 +136,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Market Leaders Section */}
+      <MarketLeadersSection />
+
       {/* Stats Section */}
-      <section className="py-24 px-8 bg-primary text-white">
+      <section className="py-24 px-8 bg-teal dark:bg-electric-blue text-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/20 mb-4">
-                <TrendingUp className="w-8 h-8 text-teal" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">$16M+</h3>
               <p className="font-manrope text-white/90">Incremental Revenue Generated</p>
             </div>
             
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neon-pink/20 mb-4">
-                <Zap className="w-8 h-8 text-neon-pink" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-4">
+                <Zap className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">&lt; 3 Weeks</h3>
               <p className="font-manrope text-white/90">Average Delivery Time</p>
             </div>
             
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-gold/20 mb-4">
-                <Sparkles className="w-8 h-8 text-accent-gold" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-4">
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-manrope text-3xl font-bold">100+</h3>
               <p className="font-manrope text-white/90">Successful Projects</p>
@@ -164,8 +170,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Meet Our Co-Founders Section */}
+      <MeetCoFoundersSection />
+
       {/* CTA Section */}
-      <section className="py-24 px-8 bg-gradient-luxury">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-manrope text-4xl font-bold text-foreground mb-6">
             Ready to Scale Your Business?
@@ -186,6 +195,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

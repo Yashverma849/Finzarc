@@ -14,8 +14,8 @@ export function Navbar() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <Zap className="h-6 w-6 text-white" />
-          <span className="font-manrope text-sm text-white/90 uppercase tracking-widest font-medium">
+          <Zap className="h-6 w-6 text-black" />
+          <span className="font-manrope text-sm text-black uppercase tracking-widest font-bold">
             FINZARC
           </span>
         </Link>
@@ -26,7 +26,7 @@ export function Navbar() {
             <Link
               key={link.name}
               to={link.href}
-              className="font-manrope text-white/80 hover:text-white transition-colors duration-300 text-sm"
+              className="font-manrope text-black hover:text-gray-600 transition-colors duration-300 text-sm font-bold"
             >
               {link.name}
             </Link>

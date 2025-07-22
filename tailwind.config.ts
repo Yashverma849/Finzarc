@@ -63,7 +63,12 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+				// Custom color palette
+				'skin-beige': '#fbeee6',
+				'teal': '#00bfa6',
+				'electric-blue': '#5078f2',
+				'off-white': '#f8f8f8',
 			},
 			backgroundImage: {
 				'gradient-neon': 'var(--gradient-neon)',

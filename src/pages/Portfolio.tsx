@@ -86,14 +86,14 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-primary text-white pt-24 pb-16">
+      <section className="relative bg-skin-beige dark:bg-gray-900 text-gray-800 dark:text-white pt-24 pb-16">
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">
             <h1 className="font-futura text-5xl md:text-6xl uppercase tracking-tight mb-6">
               Our Portfolio
             </h1>
-            <p className="font-manrope text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="font-manrope text-xl text-gray-600 dark:text-white/80 max-w-3xl mx-auto">
               Showcasing exceptional results across industries with our premium solutions
             </p>
           </div>
@@ -101,7 +101,7 @@ const Portfolio = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-8 bg-gradient-luxury">
+      <section className="py-16 px-8 bg-off-white dark:bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
@@ -122,7 +122,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24 px-8 bg-background">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-manrope text-4xl font-bold text-foreground mb-4">
@@ -198,12 +198,12 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-8 bg-primary text-white">
+      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900 text-gray-800 dark:text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-manrope text-4xl font-bold mb-6">
             Ready to Create Your Success Story?
           </h2>
-          <p className="font-manrope text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="font-manrope text-xl text-gray-600 dark:text-white/80 mb-8 max-w-2xl mx-auto">
             Join our portfolio of successful clients and transform your business with our premium solutions
           </p>
           
