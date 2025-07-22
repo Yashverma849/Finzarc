@@ -1,8 +1,8 @@
 import React from "react";
 
 export const Footer: React.FC = () => (
-  <footer className="w-full bg-[#00bfa6] dark:bg-gray-900 pt-12 pb-4 px-4 mt-16 text-white font-manrope">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 items-start">
+  <footer className="w-full bg-[#00bfa6] dark:bg-[#5987fa] pt-16 pb-10 px-0 text-white font-manrope">
+    <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 items-start px-4 sm:px-8">
       {/* Brand and Tagline */}
       <div className="flex flex-col items-start pl-2">
         <div className="text-4xl font-extrabold mb-2 text-white">
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => (
     {/* Divider */}
     <div className="w-full border-t border-white/10 my-8" />
     {/* Legal Row */}
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-manrope text-white/80 gap-4 px-1">
+    <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-manrope text-white/80 gap-4 px-4 sm:px-8">
       <div className="text-left w-full md:w-auto">
         © 2025 Finzshark Softtech Private Limited. All rights reserved.
       </div>

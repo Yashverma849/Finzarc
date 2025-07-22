@@ -1,44 +1,54 @@
 import { Link } from "react-router-dom";
-import { Zap, Menu, X, Globe, Cpu } from "lucide-react";
+import { Zap, Cpu, Globe, BarChart3 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import React, { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-} from "./ui/dropdown-menu";
+import React, { useState, useRef } from "react";
 
 export function Navbar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const openTimeout = useRef<NodeJS.Timeout | null>(null);
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const navLinks = [
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Contact", href: "/contact" }
+    { name: "Contact", href: "/contact" },
+    { name: "Blogs", href: "/blogs" }
   ];
-  const services = [
+
+  const serviceCards = [
     {
-      name: "AI Automation",
-      icon: <Zap className="h-8 w-8 mb-3 text-white bg-black/60 rounded-full p-1 mx-auto" />,
+      title: "AI Automation",
+      icon: <Cpu className="w-10 h-10 mx-auto mb-4" />,
       summary: "Intelligent automation solutions that streamline operations, reduce costs, and improve efficiency across your business.",
-      link: "/services#ai-automation",
-      color: "bg-black"
+      link: "/services/ai-automation"
     },
     {
-      name: "Finzarc WebCraft",
-      icon: <Globe className="h-8 w-8 mb-3 text-white bg-black/60 rounded-full p-1 mx-auto" />,
+      title: "Finzarc WebCraft",
+      icon: <Globe className="w-10 h-10 mx-auto mb-4" />,
       summary: "Modern web development for scalable, high-performance digital experiences.",
-      link: "/services#webcraft",
-      color: "bg-black"
+      link: "/services/web-app"
     },
     {
-      name: "Finzarc Data Science",
-      icon: <Cpu className="h-8 w-8 mb-3 text-white bg-black/60 rounded-full p-1 mx-auto" />,
-      summary: "Data analytics and machine learning to unlock actionable business insights.",
-      link: "/services#data-science",
-      color: "bg-black"
-    },
+      title: "Finzarc Data Science",
+      icon: <BarChart3 className="w-10 h-10 mx-auto mb-4" />,
+      summary: "Data analytics and insights to drive smarter business decisions and growth.",
+      link: "/services/data-science"
+    }
   ];
+
+  // Hover delay handlers
+  const handleServicesMouseEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    openTimeout.current = setTimeout(() => setServicesOpen(true), 400);
+  };
+  const handleServicesMouseLeave = () => {
+    if (openTimeout.current) clearTimeout(openTimeout.current);
+    closeTimeout.current = setTimeout(() => {
+      setServicesOpen(false);
+      setHoveredCard(null);
+    }, 400);
+  };
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 backdrop-blur-lg bg-white/10 border border-white/20 px-8 py-3 transition-all duration-300 rounded-full shadow-lg">
@@ -51,40 +61,50 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           {/* Services Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className="font-manrope text-black hover:text-gray-600 transition-colors duration-300 text-sm font-bold flex items-center gap-1 focus:outline-none">
-                Services
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="p-4 bg-black/95 border-none rounded-2xl shadow-2xl min-w-[340px] flex gap-4">
-              {services.map((service) => (
-                <div
-                  key={service.name}
-                  className="flex flex-col items-center justify-between w-56 h-64 rounded-xl bg-black hover:bg-[#18181b] transition group p-4 cursor-pointer"
-                >
-                  {service.icon}
-                  <div className="font-manrope text-lg font-bold text-white text-center mb-2 mt-2">
-                    {service.name}
-                  </div>
-                  <div className="text-white/80 text-sm text-center mb-4 group-hover:text-white transition-all duration-200">
-                    {service.summary}
-                  </div>
-                  <Link
-                    to={service.link}
-                    className="text-[#00bfa6] font-semibold text-sm mt-auto group-hover:underline flex items-center gap-1"
+          <div
+            className="relative"
+            onMouseEnter={handleServicesMouseEnter}
+            onMouseLeave={handleServicesMouseLeave}
+          >
+            <button
+              className="font-manrope text-black hover:text-[#00bfa6] text-sm font-bold flex items-center gap-1 focus:outline-none"
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
+            >
+              Services
+            </button>
+            {/* Dropdown */}
+            {servicesOpen && (
+              <div className="absolute left-0 mt-4 bg-white dark:bg-black/95 border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col lg:flex-row gap-4 px-6 py-6 z-50 max-w-[95vw] transition-all duration-200">
+                {/* Service Cards Only */}
+                {serviceCards.map((card, idx) => (
+                  <div
+                    key={card.title}
+                    className={`group bg-white dark:bg-black rounded-xl p-6 w-64 flex flex-col items-center justify-center cursor-pointer transition-all duration-200 border border-transparent hover:border-[#00bfa6] ${hoveredCard === idx ? "ring-2 ring-[#00bfa6]" : ""}`}
+                    onMouseEnter={() => setHoveredCard(idx)}
+                    onMouseLeave={() => setHoveredCard(null)}
                   >
-                    Learn more <span className="ml-1">→</span>
-                  </Link>
-                </div>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-          {/* Other nav links */}
+                    {card.icon}
+                    <div className="font-manrope text-lg font-bold text-black dark:text-white text-center mb-2">{card.title}</div>
+                    {/* Show summary and link on hover (desktop) or always (mobile) */}
+                    <div className={`mt-2 text-center transition-all duration-200 ${hoveredCard === idx ? "opacity-100 max-h-40" : "opacity-0 max-h-0 lg:group-hover:opacity-100 lg:group-hover:max-h-40"} overflow-hidden`}>
+                      <div className="text-gray-700 dark:text-white/80 text-sm mb-2">{card.summary}</div>
+                      <Link
+                        to={card.link}
+                        className="text-[#00bfa6] font-bold flex items-center gap-1 hover:underline"
+                      >
+                        Learn more <span aria-hidden>→</span>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          {/* Other Nav Links */}
           {navLinks.slice(1).map((link) => (
             <Link
               key={link.name}
@@ -96,90 +116,9 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Right Controls: Theme Toggle & Sidebar Toggle */}
-        <div className="flex items-center gap-x-2">
-          {/* Theme Toggle */}
-          <ThemeToggle />
-          {/* Mobile Sidebar Toggle */}
-          <button
-            className="md:hidden flex items-center justify-center h-8 w-8 p-0 text-black"
-            onClick={() => setSidebarOpen(true)}
-            aria-label="Open navigation menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
-        </div>
+        {/* Theme Toggle */}
+        <ThemeToggle />
       </div>
-
-      {/* Mobile Sidebar */}
-      {sidebarOpen && (
-        <>
-          {/* Overlay */}
-          <div
-            className="fixed inset-0 bg-black/40 z-50"
-            onClick={() => setSidebarOpen(false)}
-          />
-          {/* Sidebar Drawer */}
-          <div className="fixed top-4 right-4 bg-white dark:bg-gray-900 shadow-2xl border border-gray-200 dark:border-gray-800 z-50 flex flex-col p-6 rounded-2xl transition-transform duration-300 animate-in slide-in-from-right w-auto h-auto min-w-[200px]">
-            <button
-              className="self-end mb-8 text-black dark:text-white"
-              onClick={() => setSidebarOpen(false)}
-              aria-label="Close navigation menu"
-            >
-              <X className="h-7 w-7" />
-            </button>
-            <nav className="flex flex-col gap-6 mt-4">
-              {/* Services Accordion */}
-              <div>
-                <button
-                  className="w-full flex items-center justify-between font-manrope text-lg font-bold text-black dark:text-white focus:outline-none mb-2"
-                  onClick={() => setServicesOpen((open) => !open)}
-                  aria-expanded={servicesOpen}
-                >
-                  Services
-                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </button>
-                {servicesOpen && (
-                  <div className="flex flex-col gap-4 mb-4">
-                    {services.map((service) => (
-                      <div
-                        key={service.name}
-                        className="flex flex-col items-center justify-between w-full rounded-xl bg-black dark:bg-gray-800 hover:bg-[#18181b] transition group p-4 cursor-pointer"
-                      >
-                        {service.icon}
-                        <div className="font-manrope text-base font-bold text-white text-center mb-2 mt-2">
-                          {service.name}
-                        </div>
-                        <div className="text-white/80 text-xs text-center mb-2 group-hover:text-white transition-all duration-200">
-                          {service.summary}
-                        </div>
-                        <Link
-                          to={service.link}
-                          className="text-[#00bfa6] font-semibold text-xs mt-auto group-hover:underline flex items-center gap-1"
-                          onClick={() => setSidebarOpen(false)}
-                        >
-                          Learn more <span className="ml-1">→</span>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {/* Other nav links */}
-              {navLinks.slice(1).map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="font-manrope text-lg font-bold text-black dark:text-white hover:text-[#5078f2] dark:hover:text-[#00bfa6] transition"
-                  onClick={() => setSidebarOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </>
-      )}
     </nav>
   );
 }

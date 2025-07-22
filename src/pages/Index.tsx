@@ -6,7 +6,6 @@ import webDevelopmentImg from "@/assets/web-development.jpg";
 import dataAnalyticsImg from "@/assets/data-analytics.jpg";
 import { MarketLeadersSection } from "@/components/MarketLeadersSection";
 import { MeetCoFoundersSection } from "@/components/MeetCoFoundersSection";
-import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const services = [
@@ -189,8 +188,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

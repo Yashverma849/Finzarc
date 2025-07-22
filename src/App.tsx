@@ -9,6 +9,10 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AIAutomation from "./pages/AIAutomation";
+import WebAppServices from "./pages/WebAppServices";
+import DataScienceAnalytics from "./pages/DataScienceAnalytics";
+import Blogs from "./pages/Blogs";
 
 const queryClient = new QueryClient();
 
@@ -22,10 +26,13 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/ai-automation" element={<AIAutomation />} />
+            <Route path="/services/web-app" element={<WebAppServices />} />
+            <Route path="/services/data-science" element={<DataScienceAnalytics />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blogs" element={<Blogs />} />
           </Route>
-          {/* The NotFound route is kept outside the layout to avoid showing the navbar on the 404 page */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
