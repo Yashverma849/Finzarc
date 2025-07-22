@@ -54,7 +54,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section with Video Background */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[90vh] md:h-screen w-full overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -73,40 +73,35 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        {/* Navigation - REMOVED since it is now in the layout */}
-
         {/* Hero Content - Left Side */}
-        <div className="relative z-10 max-w-2xl pt-40 px-8">
+        <div className="relative z-10 max-w-2xl pt-32 md:pt-40 px-4 sm:px-8">
           <div className="space-y-6">
-            <h1 className="font-futura text-6xl text-white tracking-tight leading-[1.1] uppercase">
+            <h1 className="font-futura text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] uppercase">
               FINZARC
             </h1>
-            
-            <p className="font-manrope text-base text-white/90 font-normal max-w-lg">
+            <p className="font-manrope text-base sm:text-lg text-white/90 font-normal max-w-lg">
               Marketing Automation · WebApp Dev · Data Science & Analytics
             </p>
-            
-            <Button className="bg-white text-black px-5 py-2 rounded-lg font-manrope text-sm font-medium uppercase hover:bg-gray-100 transition-colors duration-300">
+            <Button className="bg-white text-black px-5 py-2 rounded-lg font-manrope text-sm font-medium uppercase hover:bg-gray-100 transition-colors duration-300 w-full sm:w-auto">
               3x My Revenue →
             </Button>
           </div>
         </div>
 
         {/* Right Side Vertical Text */}
-        <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90">
-          <p className="font-manrope uppercase tracking-widest text-sm text-white/80 whitespace-nowrap">
+        <div className="hidden sm:block absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 rotate-90">
+          <p className="font-manrope uppercase tracking-widest text-xs sm:text-sm text-white/80 whitespace-nowrap">
             USD 16M in Incremental Revenue for Clients · Avg Delivery Time &lt; 3 Weeks
           </p>
         </div>
 
         {/* Bottom Footer Labels */}
-        <div className="absolute bottom-4 left-6">
+        <div className="absolute bottom-4 left-4 sm:left-6">
           <p className="font-manrope text-xs text-white/75">
             ✦ Founded to Upgrade Businesses, 2023
           </p>
         </div>
-
-        <div className="absolute bottom-4 right-6">
+        <div className="absolute bottom-4 right-4 sm:right-6">
           <p className="font-manrope text-xs text-white/80">
             ©️ FINZARC
           </p>
@@ -114,17 +109,16 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-8 bg-skin-beige dark:bg-gray-900">
+      <section className="py-16 md:py-24 px-4 sm:px-8 bg-skin-beige dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-manrope text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="font-manrope text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Our Premium Services
             </h2>
-            <p className="font-manrope text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-manrope text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Elevate your business with our cutting-edge solutions designed for the modern enterprise
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard
