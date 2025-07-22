@@ -1,6 +1,5 @@
 import { ArrowRight, Sparkles, TrendingUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/Navbar";
 import { ServiceCard } from "@/components/ServiceCard";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 import webDevelopmentImg from "@/assets/web-development.jpg";
@@ -71,8 +70,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        {/* Navigation */}
-        <Navbar />
+        {/* Navigation - REMOVED since it is now in the layout */}
 
         {/* Hero Content - Left Side */}
         <div className="relative z-10 max-w-2xl pt-40 px-8">

@@ -1,6 +1,5 @@
 import { ExternalLink, TrendingUp, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NavbarContextual } from "@/components/NavbarContextual";
 
 const Portfolio = () => {
   const projects = [
@@ -88,7 +87,6 @@ const Portfolio = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative bg-primary text-white pt-24 pb-16">
-        <NavbarContextual variant="dark" />
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">

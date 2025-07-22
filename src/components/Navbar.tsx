@@ -10,7 +10,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/20 px-8 py-4 transition-all duration-300">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 backdrop-blur-lg bg-white/10 border border-white/20 px-8 py-3 transition-all duration-300 rounded-full shadow-lg">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">

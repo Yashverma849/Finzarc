@@ -2,7 +2,6 @@ import { ArrowRight, Mail, Phone, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { NavbarContextual } from "@/components/NavbarContextual";
 
 const Contact = () => {
   const contactInfo = [
@@ -36,7 +35,6 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative bg-primary text-white pt-24 pb-16">
-        <NavbarContextual variant="dark" />
         
         <div className="max-w-6xl mx-auto px-8 pt-16">
           <div className="text-center">
